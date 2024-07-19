@@ -30,3 +30,7 @@ Connecting the hardware and setting the jumpers/pins
 ### Configuring `crontab`
 
 ## Understanding the `player.py` script
+
+
+## Future Ideas
+Add e-ink display like (https://www.adafruit.com/product/3743). Might need to change NFC hardware to not have the display cover up the NFC reader location?
