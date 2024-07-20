@@ -19,8 +19,17 @@ Connecting the hardware and setting the jumpers/pins
 ### Installing Raspberry Pi OS
 
 ### Creating a `venv` environment
+```bash
+`python -m venv ~/sonosjukebox/venv/`
+`source ~/sonosjukebox/venv/bin/activate`
+```
 
 ### Installing required Python libraries
+```bash
+pip install -r requirements.txt
+```
+
+Libraries included in `requirements.txt`:
 * [`RPi.GPIO`](https://pypi.org/project/RPi.GPIO/)
 * [`spidev`](https://pypi.org/project/spidev/)
 * [`soco-cli`](https://github.com/avantrec/soco-cli)
