@@ -36,6 +36,7 @@ Libraries included in `requirements.txt`:
 * [`RPi.GPIO`](https://pypi.org/project/RPi.GPIO/)
 * [`spidev`](https://pypi.org/project/spidev/)
 * [`soco-cli`](https://github.com/avantrec/soco-cli)
+* [`serial`](https://pypi.org/project/serial/)
 
 ### Downloading `sonosjukebox` files
 
