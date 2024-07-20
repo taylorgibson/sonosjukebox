@@ -20,8 +20,11 @@ Connecting the hardware and setting the jumpers/pins
 
 ### Creating a `venv` environment
 ```bash
-`python -m venv ~/sonosjukebox/venv/`
-`source ~/sonosjukebox/venv/bin/activate`
+python -m venv <path_to_sonosjukebox>/venv/
+```
+
+```bash
+source <path_to_sonosjukebox>/venv/bin/activate
 ```
 
 ### Installing required Python libraries
