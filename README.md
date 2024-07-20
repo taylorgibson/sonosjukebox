@@ -22,7 +22,7 @@ Connecting the hardware and setting the jumpers/pins
 
 ### Installing required Python libraries
 * [`RPi.GPIO`](https://pypi.org/project/RPi.GPIO/)
-* [`spydev`](https://pypi.org/project/spidev/)
+* [`spidev`](https://pypi.org/project/spidev/)
 * [`soco-cli`](https://github.com/avantrec/soco-cli)
 
 ### Downloading `sonosjukebox` files
