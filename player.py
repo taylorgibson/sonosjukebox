@@ -55,8 +55,8 @@ def create_URI():
     # Create a string containing the characters
     URI_final = "".join(URI_ASCII)
 
-    # If the URI type is 2, it is a https:// link
-    if URI_type == 2:
+    # If the URI type is 4, it is a https:// link
+    if URI_type == 4:
         URI_final = 'https://'+URI_final
 
     return URI_final
