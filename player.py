@@ -18,13 +18,21 @@ pn532.SAM_configuration()
 def create_URI():
     # Create list to hold page data
     URI = []
+# NDEF message structure
+# Page 4: 03 XX D1 01
+# 03: Indicates start of NDEF message
+# XX: represents payload length from this byte (non-standard)
+# D1: Binary for 1101 0001 and is a NDEF Record Header flags byte
+# 01: Type Length (1 byte)
+#
+# Page 5: YY 55 ZZ AA
+# YY: also payload length in bytes, including start & stop characters
+# 55: Type field ('U' for URI record)
+# ZZ: URI Identifier (00 is no prefrix, 04 is https://)
+# AA: Is the first byte of the payload (start character)
+#
+# FE is the stop character found on a later page
 
-# Now we go through user data pages until the stop character is found
-# URI tag info starts on page 5. First block denotes length in bytes
-# Length starts with page 5, byte 4 and end with the stop character.
-# Length includes the start character and the stop character (\xfe)..
-# Second block denotes URI, Third block denotes URI type,
-# Fourth block is the start of the URI data
     first_page = pn532.ntag2xx_read_block(5)
     length_of_URI = first_page[0]
     URI_type = first_page[2]
@@ -61,9 +69,14 @@ def create_URI():
 
     return URI_final
 
-def play_URI(uri):
+def play_URI(URI):
+    os.system("sonos bedroom clear_queue")
+    os.system("sonos bedroom party")
+    os.system(f"sonos bedroom sharelink '{URI}'")
+    os.system("sonos bedroom play")
     print('Playing URI: ', uri)
-    return None
+
+return None
 
 # Initialize the UID to None for first time through
 current_uid = None
@@ -92,10 +105,7 @@ GPIO.cleanup()
 #if not scanned:
 #if scanned:
 #  URI = "spotify:album:1ZwkNGxlonmG4bjmLbV1Rr"
-#  os.system("sonos bedroom clear_queue")
-#  os.system("sonos bedroom party")
-#  os.system(f"sonos bedroom sharelink '{URI}'")
-#  os.system("sonos bedroom play")
+#  )
 #  os.system("sonos bedroom track") # Shows info on current track
 #  os.system("sonos bedroom album_art") # returns URL of current album art
 #  scanned = False
