@@ -69,12 +69,12 @@ def create_URI():
 
     return URI_final
 
-def play_URI(URI):
-    os.system("sonos bedroom clear_queue")
-    os.system("sonos bedroom party")
-    os.system(f"sonos bedroom sharelink '{URI}'")
-    os.system("sonos bedroom play")
-    print('Playing URI: ', uri)
+def play_URI(this_URI):
+    os.system("sonos kitchen clear_queue")
+    os.system("sonos kitchen party")
+    os.system(f"sonos kitchen sharelink '{this_URI}'")
+    os.system("sonos kitchen play")
+    print('Playing URI: ', this_URI)
 
     return None
 
