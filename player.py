@@ -76,7 +76,7 @@ def play_URI(URI):
     os.system("sonos bedroom play")
     print('Playing URI: ', uri)
 
-return None
+    return None
 
 # Initialize the UID to None for first time through
 current_uid = None
